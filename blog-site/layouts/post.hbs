@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>{{ title }} - {{ sitename }}</title>
+        <link rel="stylesheet" type="text/css" href="/css/post.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <div><img src="/images/me.png" /></div>
+            <h1>Panagiotis</h1>
+            <h2><a href="/"><i class="fas fa-home"></i><p>Home</p></a></h2>
+            <h2><a href="https://github.com/proubatsis"><i class="fab fa-github"></i><p>GitHub</p></a></h2>
+            <blog-search src="{{ searchapi }}"></blog-search>
+        </header>
+
+        <div class="post">
+            <h1 class="title">{{ title }}</h1>
+            <div class="post-content">
+                {{{ contents }}}
+            </div>
+        </div>
+
+        <script src="/scripts/blog-search.js" type="text/javascript"></script>
+    </body>
+</html>

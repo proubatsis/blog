@@ -1,0 +1,18 @@
+blog-search {
+    input {
+        width: 100%;
+        font-size: 1em;
+        outline: none;
+        padding: 0.25em;
+    }
+
+    .search-results {
+        padding: 1px;
+        background: $background;
+        color: $dark-text;
+
+        &.empty {
+            background: transparent;
+        }
+    }
+}

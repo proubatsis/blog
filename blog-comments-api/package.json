@@ -1,0 +1,13 @@
+{
+  "name": "blog-comments-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd .. && sbt commentsApi/compile",
+    "clean": "cd .. && sbt commentsApi/clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Panagiotis Roubatsis",
+  "license": "ISC"
+}

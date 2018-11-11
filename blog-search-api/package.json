@@ -1,0 +1,13 @@
+{
+  "name": "blog-search-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd .. && sbt searchApi/compile",
+    "clean": "cd .. && sbt searchApi/clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Panagiotis Roubatsis",
+  "license": "ISC"
+}

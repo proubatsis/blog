@@ -1,0 +1,173 @@
+// $main-color: #279778;
+// $accent-color: #B1CEDC;
+$main-color: #0E9B92;
+$accent-color: #2B3538;
+// $main-color: #507F5D;
+// $accent-color: #E65A15;
+$dark-text: #333;
+$light-text: #fefefe;
+$background: #f8f8f8;
+$main-font: 'Montserrat', sans-serif;
+
+body {
+    font-size: 16pt;
+    margin: 0px;
+    display: flex;
+    color: $dark-text;
+    background: $background;
+    font-family: $main-font;
+
+    @import "_blog-search";
+
+    header {
+        display: flex;
+        flex-direction: column;
+        background: $main-color;
+        color: $light-text;
+        width: 16em;
+        margin: 0px;
+        padding: 1em;
+
+        h1 {
+            margin: 0px;
+            color: $light-text;
+            text-decoration: none;
+            font-size: 2em;
+        }
+
+        h2 {
+            margin: 0.25em;
+            font-size: 1.25em;
+        }
+
+        h3 {
+            margin: 2px 0em 2px 1em;
+            font-size: 0.9em;
+        }
+
+        h1 a, h2 a, h3 a {
+            color: $light-text;
+            text-decoration: none;
+
+            p {
+                display: inline;
+                margin: 0px;
+            }
+
+            &:hover {
+                color: $accent-color;
+            }
+        }
+
+        h1 i, h2 i, h3 i {
+            padding-right: 0.25em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .post {
+        max-height: 100%;
+        overflow-y: scroll;
+        .post-content {
+            padding: 0em 1em 0em 1em;
+        }
+
+        h1 {
+            font-size: 2em;
+            &.title {
+                margin: 0px;
+                text-align: center;
+                padding: 0.25em;
+                background: $main-color;
+                color: $light-text;
+                font-size: 2.5em;
+            }
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        h4 {
+            font-size: 1.1em;
+        }
+
+        h5 {
+            font-size: 1.0em;
+        }
+
+        blockquote {
+            border-left: 0.25em solid $main-color;
+            padding: 0em 0em 0em 0.25em;
+            font-size: 1em;
+        }
+
+        pre {
+            margin: 1em;
+            padding: 1em;
+            background: $main-color;
+            color: $light-text;
+        }
+
+        img {
+            max-width: 80%;
+            max-height: 24em;
+        }
+
+        a {
+            color: $main-color;
+            text-decoration: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    body {
+        flex-direction: column;
+
+        header {
+            flex-direction: row;
+            width: auto;
+
+            h1 {
+                display: none;
+            }
+
+            img {
+                max-height: 4em;
+                padding-right: 1em;
+            }
+
+            h2, h3 {
+                &.blogs {
+                    display: none;
+                }
+
+                margin: 0.5em 0px 0px 0px;
+                font-size: 1.5em;
+            }
+
+            h1 a, h2 a, h3 a {
+                i {
+                    padding-left: 1em;
+                    padding-right: 1em;
+                }
+
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .post {
+        width: 100%;
+    }
+}
