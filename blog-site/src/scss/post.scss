@@ -8,6 +8,7 @@ $dark-text: #333;
 $light-text: #fefefe;
 $background: #f8f8f8;
 $main-font: 'Montserrat', sans-serif;
+$max-mobile-width: 1080px;
 
 body {
     font-size: 16pt;
@@ -17,7 +18,6 @@ body {
     background: $background;
     font-family: $main-font;
 
-    @import "_blog-search";
 
     header {
         display: flex;
@@ -27,6 +27,10 @@ body {
         width: 16em;
         margin: 0px;
         padding: 1em;
+
+        @import "_blog-search";
+
+
 
         h1 {
             margin: 0px;
@@ -128,13 +132,18 @@ body {
     }
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: $max-mobile-width) {
     body {
         flex-direction: column;
 
         header {
             flex-direction: row;
             width: auto;
+
+            blog-search {
+                position: absolute;
+                right: 1em;
+            }
 
             h1 {
                 display: none;
