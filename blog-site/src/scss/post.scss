@@ -151,6 +151,26 @@ body {
             margin: 1em;
             padding: 0.25em 0.5em 0.25em 0.5em;
         }
+
+        .feed-contents {
+            h1 {
+                font-size: 1.5em;
+                color: $light-text;
+
+                
+            }
+
+            p {
+                font-size: 1em;
+                color: $dark-text;
+            }
+        }
+
+        .separator {
+            border-bottom: 1px solid $accent-color;
+            width: 90%;
+            margin-left: 5%;
+        }
     }
 }
 
