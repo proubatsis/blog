@@ -24,13 +24,11 @@ body {
         flex-direction: column;
         background: $main-color;
         color: $light-text;
-        width: 16em;
+        width: 10em;
         margin: 0px;
         padding: 1em;
 
         @import "_blog-search";
-
-
 
         h1 {
             margin: 0px;
@@ -128,6 +126,30 @@ body {
         a {
             color: $main-color;
             text-decoration: none;
+        }
+    }
+
+    .feed {
+        width: 100%;
+
+        .feed-item {
+            a {
+                text-decoration: none;
+            }
+
+            h3 {
+                font-size: 1.25em;
+                color: $light-text;
+            }
+
+            p {
+                font-size: 1em;
+                color: $accent-color;
+            }
+
+            background: $main-color;
+            margin: 1em;
+            padding: 0.25em 0.5em 0.25em 0.5em;
         }
     }
 }

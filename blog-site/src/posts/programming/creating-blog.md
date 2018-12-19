@@ -3,6 +3,10 @@ title: Creating a blog
 slug: creating-a-blog
 date: 2018-10-14
 layout: post.hbs
+description:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec nisi tellus, hendrerit ac velit ut, facilisis consequat
+            turpis. Fusce sit.
 ---
 
 # Vultu ubi potentia erat eius toto omnia
