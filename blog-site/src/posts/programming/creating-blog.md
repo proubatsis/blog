@@ -1,5 +1,5 @@
 ---
-title: Creating a blog test
+title: Creating a blog
 slug: creating-a-blog
 date: 2018-10-14
 layout: post.hbs
