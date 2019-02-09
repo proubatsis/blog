@@ -10,6 +10,10 @@ $background: #f8f8f8;
 $main-font: 'Montserrat', sans-serif;
 $max-mobile-width: 1080px;
 
+html {
+    height: 100%;
+}
+
 body {
     font-size: 16pt;
     margin: 0px;
@@ -17,14 +21,14 @@ body {
     color: $dark-text;
     background: $background;
     font-family: $main-font;
-
+    min-height: 100%;
 
     header {
         display: flex;
         flex-direction: column;
         background: $main-color;
         color: $light-text;
-        width: 10em;
+        width: 12em;
         margin: 0px;
         padding: 1em;
 
