@@ -10,6 +10,8 @@ Metalsmith(__dirname)
         sitename: 'Panagiotis\' Blog',
         siteurl: 'blog.panagiotis.ca',
         searchapi: 'http://localhost:8080/api/search',
+        useAnalytics: !!process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        googleAnalyticsTrackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
     })
     .source('./src')
     .destination('./dist')
