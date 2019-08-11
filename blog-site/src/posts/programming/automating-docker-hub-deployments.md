@@ -15,7 +15,7 @@ a bad choice, but because I noticed that Docker Hub has an automated build syste
 I figured I'd take out a step.
 
 I decided that involving one less service would be a convenient way to go. With that said, I needed a way to actually deploy new
-images pushed to Docker Hub. Thankfully, Docker Hub provides can trigger a webhook when new images are pushed.
+images pushed to Docker Hub. Thankfully, Docker Hub can trigger a webhook when new images are pushed.
 Using the webhook, I was able to build a simple web service that deploys the updated image. It runs on a Kubernetes cluster and updates a deployment whenever
 a new image is pushed to the repository.
 
@@ -34,14 +34,14 @@ docker tag $IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT
 docker push $DOCKER_REPO:$SOURCE_COMMIT
 ```
 
-After you Docker Hub builds your image, the `post_hook` script is run and it will tag your image with
+After Docker Hub builds your image, the `post_hook` script is run and it will tag your image with
 the git commit sha and push it to your Docker Hub repo. This will allow Kubernetes to differentiate between the old and new images so that
 it will notice and perform a rolling update.
 
 ## Reacting to Webhooks
 
 To react to Webhooks I built a simple web service using ASP.NET Core. I don't have much experience with ASP.NET, but it's a framework I'd like to
-experiment with some more. I saw this as a good chance to try it out. To summarise, I created a project called [docker-hub-kube-deploy](https://github.com/proubatsis/docker-hub-kube-deploy). It exposes and endpoint at `/api/docker-hub` that accepts `POST` requests in the format
+experiment with some more. I saw this as a good chance to try it out. To summarise, I created a project called [docker-hub-kube-deploy](https://github.com/proubatsis/docker-hub-kube-deploy). It exposes an endpoint at `/api/docker-hub` that accepts `POST` requests in the format
 outlined in Docker Hub's [documentation](https://docs.docker.com/docker-hub/webhooks/#example-webhook-payload). When a new image is pushed
 to Docker Hub, this endpoint is called. When the endpoint is invoked, it ensures that the image is not tagged `latest`. We don't want
 images tagged `latest` to be deployed. If it's not tagged `latest`, then the process continues. Next, it checks which Kubernetes deployment the image maps to.
